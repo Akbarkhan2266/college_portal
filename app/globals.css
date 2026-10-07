@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-surface: #fcf9f2;
+  --color-surface-bright: #fffdf8;
+  --color-surface-dim: #f2ecd9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fbf7ee;
+  --color-surface-container: #f5eedb;
+  --color-surface-container-high: #ebe3cc;
+  --color-surface-container-highest: #dfd5ba;
+  --color-on-surface: #1f1b15;
+  --color-on-surface-variant: #4e4435;
+  --color-primary: #785610;
+  --color-primary-container: #946e28;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #fffbff;
+  --color-secondary: #a27b34;
+  --color-secondary-container: #b48a3c;
+  --color-secondary-fixed: #ffdcc3;
+  --color-secondary-fixed-dim: #eebf71;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #271900;
+  --color-tertiary: #8c6828;
+  --color-tertiary-container: #3a2503;
+  --color-tertiary-fixed: #ffdeaa;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #fffbff;
+  --color-outline: #807566;
+  --color-outline-variant: #d9cdb8;
+  --color-background: #fcf9f2;
+  --color-on-background: #1f1b15;
+  --color-inverse-surface: #2a241b;
+  --color-inverse-on-surface: #fbf7ee;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+
+  --font-serif: "Noto Serif", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-arabic: "Noto Naskh Arabic", "Amiri", serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
