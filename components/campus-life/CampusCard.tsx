@@ -25,6 +25,7 @@ export default function CampusCard({
           alt={imageAlt}
           src={imageSrc}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute top-4 right-4 bg-[#251d12]/90 text-[#ffdcc3] text-xs font-semibold px-3 py-1 rounded backdrop-blur-sm border border-[#b48a3c]/40">

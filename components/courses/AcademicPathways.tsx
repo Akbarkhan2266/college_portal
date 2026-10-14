@@ -1,62 +1,66 @@
 import React from "react";
+import Link from "next/link";
 import CourseCard from "./CourseCard";
 
 export default function AcademicPathways() {
   const courses = [
     {
-      title: "Qura'an / Tajweed",
-      subtitle: "Recite the Words of Allah with Beauty & Accuracy",
-      categoryTag: "ISLAMIC & ACADEMIC PROGRAM • 12 MONTHS",
+      title: "Dars-e-Nizami Course",
+      subtitle: "Classical Alimiyyah & Traditional Islamic Scholarship",
+      categoryTag: "ISLAMIC SCHOLARSHIP • ALIMIYYAH",
       description:
-        "Qur’an / Tajweed course mein Qur’an-e-Kareem ki durust tilawat aur Tajweed ke qawaid ko asaan andaaz mein sikhaya jata hai. Yeh course makharij, huroof ki adaigi aur tilawat ki durustgi par khaas tawajjoh deta hai.",
-      imageSrc: "/images/course-quran.jpg",
-      imageAlt: "Qur'an Tajweed Course Banner",
-      subjectsCount: "0 subjects",
-      monthlyFee: "₹200",
-    },
-    {
-      title: "Islamic Jurisprudence",
-      subtitle: "Faculty of Classical Shariah & Law",
-      categoryTag: "ISLAMIC & ACADEMIC PROGRAM • 4 YEARS",
-      description:
-        "Classical Islamic sciences, Islamic banking & finance, contemporary bioethics, aur comparative jurisprudence par mushtamil jame degree program.",
+        "Dars-e-Nizami course mein Quran, Hadith, Fiqh, Usool-e-Fiqh, Arabic grammar, aur classical Islamic scholarship ki mustanad aur jame taleem di jati hai.",
       imageSrc: "/images/course-jurisprudence.jpg",
-      imageAlt: "Muballighah Course Banner",
-      subjectsCount: "8 subjects",
-      monthlyFee: "₹250",
+      imageAlt: "Dars-e-Nizami Course Banner",
+      subjectsCount: "Comprehensive Curricula",
+      monthlyFee: "₹500",
+      pinned: true,
     },
     {
-      title: "Ethical AI & Software",
-      subtitle: "Faculty of CS & Technology",
-      categoryTag: "ISLAMIC & ACADEMIC PROGRAM • 4 YEARS B.TECH",
+      title: "Takhassus (Muftiya) Course",
+      subtitle: "Specialization in Ifta & Islamic Jurisprudence",
+      categoryTag: "POST-ALIMIYYAH SPECIALIZATION • IFTA",
       description:
-        "B.Tech in Ethical AI, Data Systems, Software Engineering aur Cybersecurity, Shariah ethics ke pledge ke sath jaded technology ki taleem.",
-      imageSrc: "/images/course-ai.jpg",
-      imageAlt: "Ethical AI & Software Engineering Banner",
-      subjectsCount: "12 subjects",
-      monthlyFee: "₹300",
+        "Fatwa naweesi, jadeed masail ki tehqeeq, comparative jurisprudence, aur shariah counseling par mushtamil aala darje ka mustanad takhassus program.",
+      imageSrc: "/images/hero-library.jpg",
+      imageAlt: "Takhassus (Muftiya) Course Banner",
+      subjectsCount: "Advanced Specialization",
+      monthlyFee: "₹500",
+      pinned: true,
+    },
+    {
+      title: "Bahaar-e-Shariat Course",
+      subtitle: "Essential Islamic Jurisprudence & Practical Shariah",
+      categoryTag: "ISLAMIC LAW & FIQH • PRACTICAL GUIDE",
+      description:
+        "Bahaar-e-Shariat ke zariye roozmarrah ke deeni masail, aqaid, ibadat (Namaz, Roza, Zakaat, Hajj), muamalat aur halal-o-haram ke mustanad ahkaam ki feham.",
+      imageSrc: "/images/course-quran.jpg",
+      imageAlt: "Bahaar-e-Shariat Course Banner",
+      subjectsCount: "Practical Shariah",
+      monthlyFee: "₹500",
+      pinned: true,
     },
   ];
 
   return (
-    <section id="courses" className="w-full bg-[#fbf7ee] py-10 sm:py-14 border-b border-[#e5dcc7]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10">
+    <section id="courses" className="w-full bg-[#fbf7ee] py-10 sm:py-16 border-b border-[#e5dcc7]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-4">
           <div>
             <div className="flex items-center gap-2 text-[#785610] mb-2">
               <span className="material-symbols-outlined text-[18px]">
                 school
               </span>
               <span className="text-xs uppercase tracking-widest font-bold">
-                Comprehensive Curricula
+                Featured Programs
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl text-[#1f1b15] font-serif font-semibold">
-              Dual-Excellence Academic Pathways
+              Featured Islamic Courses
             </h2>
             <p className="text-base text-[#4e4435] mt-2">
-              Rooted in divine wisdom, prepared for global professions.
+              Authentic Islamic scholarship and traditional deeni taleem with qualified faculty.
             </p>
           </div>
           <div className="hidden md:block">
@@ -64,7 +68,7 @@ export default function AcademicPathways() {
               <span className="material-symbols-outlined text-[#a27b34] text-[16px]">
                 verified
               </span>
-              UGC Recognised • OIC Academic Affiliate
+              Qualified Scholars • Recognized Islamic Syllabus
             </span>
           </div>
         </div>
@@ -74,6 +78,19 @@ export default function AcademicPathways() {
           {courses.map((course, idx) => (
             <CourseCard key={idx} {...course} />
           ))}
+        </div>
+
+        {/* Explore All Courses Button */}
+        <div className="mt-10 sm:mt-12 text-center">
+          <Link
+            href="/courses"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#1f1b15] hover:bg-[#785610] text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md"
+          >
+            <span>Explore All 13 Courses</span>
+            <span className="material-symbols-outlined text-[18px]">
+              arrow_forward
+            </span>
+          </Link>
         </div>
       </div>
     </section>

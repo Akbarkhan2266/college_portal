@@ -38,35 +38,35 @@ export default function AdmissionsSection() {
       <div className="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-[#b48a3c]/15 filter blur-3xl pointer-events-none" />
       <div className="absolute -left-20 top-20 w-80 h-80 rounded-full bg-[#eebf71]/10 filter blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="inline-block py-1 px-3.5 rounded-full bg-[#ffffff]/10 border border-[#b48a3c]/40 text-[#ffdcc3] text-xs tracking-widest uppercase font-semibold mb-3">
             Admissions 2026–27 Open
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-[#fffdf8] font-serif font-semibold">
             Begin Your Path of Knowledge &amp; Purpose
           </h2>
-          <p className="text-base sm:text-lg text-[#ebe3cc] mt-3 leading-relaxed">
+          <p className="text-sm sm:text-lg text-[#ebe3cc] mt-3 leading-relaxed">
             Apply for the 2026–27 Academic Year. Need-based, Merit-based, and
             Tahfeez-ul-Quran special scholarship windows are currently open.
           </p>
         </div>
 
         {/* 3-Step Progression Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 sm:mb-16">
           {steps.map((step, idx) => (
             <AdmissionStepCard key={idx} {...step} />
           ))}
         </div>
 
         {/* Action Hub Box */}
-        <div className="bg-gradient-to-br from-[#fffdf8] to-[#fbf7ee] rounded-xl p-8 text-[#1f1b15] shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 border border-[#e5dcc7]">
+        <div className="bg-gradient-to-br from-[#fffdf8] to-[#fbf7ee] rounded-xl p-5 sm:p-8 text-[#1f1b15] shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 border border-[#e5dcc7]">
           <div className="space-y-2 text-center lg:text-left">
-            <h3 className="text-2xl text-[#1f1b15] font-serif font-bold">
+            <h3 className="text-xl sm:text-2xl text-[#1f1b15] font-serif font-bold">
               Ready to Join Al-Jamia Tul Bukhari?
             </h3>
-            <p className="text-sm text-[#4e4435] max-w-xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#4e4435] max-w-xl leading-relaxed">
               Complete the intuitive online admissions portal in under 15
               minutes. No initial application fee required for early scholarship
               consideration.
@@ -75,7 +75,7 @@ export default function AdmissionsSection() {
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
             <Link
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#785610] text-white text-sm font-semibold hover:bg-[#946e28] transition-all shadow-md border border-[#b48a3c]"
-              href="#admission"
+              href="/admission"
             >
               <span>Start Online Application</span>
               <span className="material-symbols-outlined text-[18px]">
@@ -96,15 +96,27 @@ export default function AdmissionsSection() {
 
         {/* Quick Helpline Badge */}
         <div className="mt-8 text-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#ffffff]/5 border border-[#b48a3c]/30 text-[#ebe3cc] text-xs backdrop-blur-sm">
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-3 sm:py-2 rounded-2xl sm:rounded-full bg-[#ffffff]/5 border border-[#b48a3c]/30 text-[#ebe3cc] text-xs backdrop-blur-sm">
             <span className="material-symbols-outlined text-[16px] text-[#eebf71]">
               support_agent
             </span>
             <span>
-              Admissions Desk:{" "}
-              <strong className="text-[#fffdf8]">
-                admissions@aljamiatulbukhari.org
-              </strong>
+              Admissions / WhatsApp:{" "}
+              <a
+                href="https://wa.me/917505611253"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#fffdf8] font-bold hover:underline"
+              >
+                +91 7505611253
+              </a>
+              {" "}•{" "}
+              <a
+                href="mailto:aljamiatulbukhari@gmail.com"
+                className="text-[#fffdf8] font-semibold hover:underline"
+              >
+                aljamiatulbukhari@gmail.com
+              </a>
             </span>
             <span className="opacity-40 text-[#c2b498]">•</span>
             <span>Dedicated Sister &amp; Brother Admissions Counselors Available</span>

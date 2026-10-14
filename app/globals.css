@@ -50,3 +50,107 @@
     display: none;
   }
 }
+
+/* Background Animation Keyframes */
+@keyframes heroFloatSlow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(35px, -45px) scale(1.12);
+  }
+  66% {
+    transform: translate(-25px, 25px) scale(0.94);
+  }
+}
+
+@keyframes heroFloatReverse {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-45px, 35px) scale(1.1);
+  }
+  66% {
+    transform: translate(30px, -30px) scale(0.92);
+  }
+}
+
+@keyframes heroPulseGlow {
+  0%, 100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.42;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes heroRotateSacred {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heroParticleDrift {
+  0% {
+    transform: translateY(0px) scale(0.8);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-90px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.animate-hero-float-slow {
+  animation: heroFloatSlow 16s ease-in-out infinite;
+}
+
+.animate-hero-float-reverse {
+  animation: heroFloatReverse 20s ease-in-out infinite;
+}
+
+.animate-hero-pulse-glow {
+  animation: heroPulseGlow 7s ease-in-out infinite;
+}
+
+.animate-hero-rotate-sacred {
+  animation: heroRotateSacred 90s linear infinite;
+}
+
+.animate-hero-particle-1 {
+  animation: heroParticleDrift 6s ease-in-out infinite;
+}
+
+.animate-hero-particle-2 {
+  animation: heroParticleDrift 8s ease-in-out infinite 2s;
+}
+
+.animate-hero-particle-3 {
+  animation: heroParticleDrift 7s ease-in-out infinite 4s;
+}
+
+@keyframes heroLightSweep {
+  0% {
+    background-position: 250% 0;
+  }
+  100% {
+    background-position: -150% 0;
+  }
+}
+
+.animate-hero-light-sweep {
+  animation: heroLightSweep 14s linear infinite;
+}
+

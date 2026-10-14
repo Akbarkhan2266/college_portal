@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
+import { QueryProvider } from "@/lib/query-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Al Jamia Tul Bukhari Academy | Where Faith Meets the Future",
   description:
     "An autonomous center for advanced classical Shariah studies, modern sciences, and ethical leadership in Agra, India.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -38,7 +51,9 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-[#fcf9f2] text-[#1f1b15] font-sans selection:bg-[#d4af37] selection:text-[#1f1b15]"
         suppressHydrationWarning
       >
-        {children}
+        <QueryProvider>
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );

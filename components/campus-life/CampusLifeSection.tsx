@@ -47,7 +47,7 @@ export default function CampusLifeSection() {
 
   return (
     <section id="campus-life" className="w-full bg-[#fcf9f2] py-10 sm:py-14">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f5eedb] border border-[#d9cdb8] text-[#785610] text-xs uppercase tracking-widest font-bold mb-3 shadow-xs">

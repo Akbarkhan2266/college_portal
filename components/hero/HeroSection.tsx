@@ -1,37 +1,37 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import HeroBackgroundAnimation from "./HeroBackgroundAnimation";
 
 export default function HeroSection() {
   return (
     <section className="relative w-full bg-gradient-to-b from-[#251d12] via-[#2c2214] to-[#1e170e] text-[#fffdf8] overflow-hidden border-b border-[#8c6828]/30">
-      {/* Subtle ambient glow highlights in gold & amber */}
-      <div className="absolute -top-32 -left-20 w-96 h-96 rounded-full bg-[#b48a3c]/15 filter blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 right-0 w-96 h-96 rounded-full bg-[#eebf71]/15 filter blur-3xl pointer-events-none" />
+      {/* Dynamic Full Background Animation System */}
+      <HeroBackgroundAnimation />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 pt-12 pb-20 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-10 pt-8 sm:pt-12 pb-14 sm:pb-20 z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Hero Text Column */}
-          <div className="lg:col-span-7 flex flex-col items-start space-y-6">
+          <div className="lg:col-span-7 flex flex-col items-start space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5eedb]/10 border border-[#b48a3c]/40 text-[#ffdcc3] text-xs font-semibold tracking-wide">
              
               Admission Open 2026–27 • Deeni Taleem &amp; Contemporary Degrees
             </div>
 
             <div className="space-y-3 pt-1">
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#fffdf8] tracking-tight leading-[1.15]">
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#fffdf8] tracking-tight leading-[1.18]">
                 Where Faith Meets <br className="hidden sm:inline" />
                 <span className="text-[#eebf71]">the Future.</span>
               </h1>
               <p
-                className="font-arabic text-xl sm:text-5xl text-[#ffdcc3] font-medium pt-1"
+                className="font-arabic text-2xl sm:text-4xl lg:text-5xl text-[#ffdcc3] font-medium pt-1"
                 dir="rtl"
               >
                 دین اور جدید علوم کی معتبر جامعہ
               </p>
             </div>
 
-            <p className="text-base sm:text-lg text-[#ebe3cc] max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-lg text-[#ebe3cc] max-w-xl leading-relaxed">
               Empowering the next generation of thinkers with divine wisdom and
               world-class education.{" "}
               <span className="text-[#ffdeaa] font-medium">
@@ -39,9 +39,9 @@ export default function HeroSection() {
               </span>
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-3 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-3 w-full sm:w-auto">
               <Link
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#b48a3c] text-[#1f1b15] text-sm font-bold hover:bg-[#d4af37] transition-all shadow-md group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#b48a3c] text-[#1f1b15] text-sm font-bold hover:bg-[#d4af37] transition-all shadow-md group text-center"
                 href="#courses"
               >
                 <span>Explore Academic Programs</span>
@@ -50,38 +50,29 @@ export default function HeroSection() {
                 </span>
               </Link>
               <a
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-[#ffffff]/10 hover:bg-[#ffffff]/15 text-[#fffdf8] text-sm font-medium border border-[#b48a3c]/40 backdrop-blur-sm transition-all"
-                href="#prospectus"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-[#ffffff]/10 hover:bg-[#ffffff]/15 text-[#fffdf8] text-sm font-medium border border-[#b48a3c]/40 backdrop-blur-sm transition-all shadow-sm hover:border-[#b48a3c] group text-center"
+                href="/documents/al-jamiatul-bukhari-prospectus-2026.pdf"
+                download="Al-Jamiatul-Bukhari-Prospectus-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Download Al-Jamiatul Bukhari Academy Prospectus 2026 (PDF)"
               >
-                <span className="material-symbols-outlined text-[18px] text-[#eebf71]">
+                <span className="material-symbols-outlined text-[18px] text-[#eebf71] group-hover:translate-y-0.5 transition-transform">
                   download
                 </span>
                 <span>Prospectus 2026 (PDF)</span>
               </a>
             </div>
-
-            {/* Announcement Banner */}
-            {/* <div className="w-full mt-4 p-4 rounded-xl bg-[#f5eedb]/10 border border-[#b48a3c]/30 backdrop-blur-sm flex items-center gap-3 text-xs sm:text-sm text-[#ebe3cc]">
-              <span className="material-symbols-outlined text-[#eebf71] text-[20px] shrink-0">
-                event_available
-              </span>
-              <p>
-                <strong className="text-[#fffdf8]">Autumn 2026 Intake:</strong>{" "}
-                Merit &amp; Zakat Scholarships Available •{" "}
-                <span className="text-[#ffdcc3] font-medium">
-                  Last Date: 30 June 2026
-                </span>
-              </p>
-            </div> */}
           </div>
 
-          {/* Right Hero Image Column */}
-          <div className="lg:col-span-5 relative flex flex-col items-center pt-4 lg:pt-0">
+          {/* Right Hero Image Column (Desktop only, hidden on mobile) */}
+          <div className="hidden lg:flex lg:col-span-5 relative flex-col items-center pt-2 lg:pt-0">
             <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-[#b48a3c]/40 shadow-2xl bg-[#3a2c16]">
               <Image
                 alt="A group of young Muslim female college students studying together in a modern university library"
                 src="/images/hero-library.jpg"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover brightness-95 contrast-105"
                 priority
               />

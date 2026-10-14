@@ -25,15 +25,40 @@ export default function CourseCard({
   monthlyFee,
   pinned = true,
 }: CourseCardProps) {
+  // Format tuition display cleanly
+  const rawFee = monthlyFee?.trim() || "";
+  const isSubsidy =
+    !rawFee ||
+    rawFee.toLowerCase().includes("merit subsidy") ||
+    rawFee.toLowerCase() === "free";
+
+  let displayFee = "Merit Subsidy Available";
+  let showMonthly = false;
+
+  if (!isSubsidy) {
+    const isPureDigits = /^\d+(\.\d+)?$/.test(rawFee);
+    if (isPureDigits) {
+      displayFee = `₹${rawFee}`;
+      showMonthly = true;
+    } else {
+      displayFee = rawFee.replace(/\s*\/(mo|month)$/i, "");
+      showMonthly = true;
+    }
+  }
+
   return (
-    <div className="bg-[#ffffff] rounded-2xl border border-[#e5dcc7] shadow-sm hover:shadow-md hover:border-[#b48a3c]/60 transition-all duration-300 overflow-hidden flex flex-col h-full">
+    <div className="bg-[#ffffff] rounded-2xl border border-[#e5dcc7] shadow-sm hover:shadow-md hover:border-[#b48a3c]/60 transition-all duration-300 overflow-hidden flex flex-col h-full group">
       {/* Top Banner */}
       <div className="relative w-full h-44 overflow-hidden rounded-t-xl bg-[#f5eedb] shrink-0">
         <Image
           alt={imageAlt}
           src={imageSrc}
           fill
-          className="object-cover rounded-t-xl"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          unoptimized={Boolean(
+            imageSrc?.startsWith("data:") || imageSrc?.startsWith("http")
+          )}
+          className="object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 flex flex-col justify-between p-4 pointer-events-none">
           <div className="flex justify-end">
@@ -84,28 +109,25 @@ export default function CourseCard({
                 MONTHLY FEES
               </span>
               <span className="text-sm font-bold text-[#785610] font-serif mt-0.5 block">
-                {monthlyFee}{" "}
-                <span className="text-xs font-normal text-[#807566] font-sans">
-                  /mo
-                </span>
+                {displayFee}{" "}
+                {showMonthly && (
+                  <span className="text-xs font-normal text-[#807566] font-sans">
+                    /mo
+                  </span>
+                )}
               </span>
             </div>
           </div>
           <div className="border-t border-dashed border-[#d9cdb8] my-4" />
 
-          <div className="flex items-center gap-3 pt-1">
+          {/* Action Button: Wide, responsive Enroll Now */}
+          <div className="pt-1">
             <Link
-              className="bg-[#f5eedb] hover:bg-[#ebe3cc] text-[#1f1b15] font-semibold py-2.5 px-4 rounded-xl border border-[#d9cdb8] text-sm text-center flex-1 transition-all"
-              href="#courses"
+              className="w-full bg-[#1f1b15] hover:bg-[#785610] active:scale-[0.99] text-white font-semibold py-3 px-5 rounded-xl text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all duration-200"
+              href={`/admission?course=${encodeURIComponent(title)}`}
             >
-              Explore Course
-            </Link>
-            <Link
-              className="bg-[#785610] hover:bg-[#946e28] text-white font-semibold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-1.5 flex-1 shadow-sm transition-all"
-              href="#admission"
-            >
-              <span>Apply</span>
-              <span className="material-symbols-outlined text-[16px]">
+              <span>Enroll Now</span>
+              <span className="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5">
                 arrow_forward
               </span>
             </Link>

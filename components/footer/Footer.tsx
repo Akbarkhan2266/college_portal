@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#fbf7ee] px-6 sm:px-8 border-t border-[#e5dcc7] pt-16 pb-12">
+    <footer className="w-full bg-[#fbf7ee] px-4 sm:px-8 border-t border-[#e5dcc7] pt-12 sm:pt-16 pb-12">
       <div className="max-w-7xl mx-auto">
         {/* Top Quran Verse Banner */}
         <div className="bg-[#fffdf8] border border-[#d9cdb8] p-6 sm:p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm mb-14">
@@ -32,6 +32,7 @@ export default function Footer() {
                   alt="Al Jamia Tul Bukhari Academy"
                   src="/images/logo.png"
                   fill
+                  sizes="208px"
                   className="object-contain object-left"
                 />
               </div>
@@ -55,7 +56,13 @@ export default function Footer() {
                 <span className="material-symbols-outlined text-[16px] text-[#785610]">
                   call
                 </span>
-                Admissions: +91 9917802153
+                WhatsApp: +91 7505611253
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-[16px] text-[#785610]">
+                  mail
+                </span>
+                aljamiatulbukhari@gmail.com
               </p>
             </div>
           </div>
@@ -79,6 +86,11 @@ export default function Footer() {
               <li>
                 <Link className="hover:text-[#785610] transition-colors" href="/admission">
                   Admission
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-[#785610] transition-colors" href="/careers">
+                  Careers &amp; Faculty
                 </Link>
               </li>
               <li>
@@ -150,7 +162,9 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-xs">
               <a
                 className="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-[#ffffff] border border-[#d9cdb8] text-[#1f1b15] hover:border-[#b48a3c] hover:bg-[#f5eedb] transition-all group shadow-xs"
-                href="#instagram"
+                href="https://instagram.com/aljamiatulbukhari_official"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-[18px] text-[#785610]">
@@ -159,21 +173,53 @@ export default function Footer() {
                   <span>Instagram</span>
                 </span>
                 <span className="text-[#8c6828] group-hover:translate-x-0.5 transition-transform">
-                  @aljamiatulbukhari
+                  @aljamiatulbukhari_official
                 </span>
               </a>
               <a
                 className="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-[#ffffff] border border-[#d9cdb8] text-[#1f1b15] hover:border-[#b48a3c] hover:bg-[#f5eedb] transition-all group shadow-xs"
-                href="#facebook"
+                href="https://wa.me/917505611253"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-[18px] text-[#785610]">
-                    public
+                    forum
                   </span>
-                  <span>Facebook</span>
+                  <span>WhatsApp Helpline</span>
+                </span>
+                <span className="text-[#8c6828] group-hover:translate-x-0.5 transition-transform font-mono">
+                  +91 7505611253
+                </span>
+              </a>
+              <a
+                className="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-[#ffffff] border border-[#d9cdb8] text-[#1f1b15] hover:border-[#b48a3c] hover:bg-[#f5eedb] transition-all group shadow-xs"
+                href="https://whatsapp.com/channel/0029Vb95CnC1CYoNGRnVQv2Y"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[18px] text-[#785610]">
+                    campaign
+                  </span>
+                  <span>WhatsApp Channel</span>
                 </span>
                 <span className="text-[#8c6828] group-hover:translate-x-0.5 transition-transform">
-                  /aljamiatulbukhari
+                  Official Group
+                </span>
+              </a>
+              <a
+                className="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-[#ffffff] border border-[#d9cdb8] text-[#1f1b15] hover:border-[#b48a3c] hover:bg-[#f5eedb] transition-all group shadow-xs"
+                href="mailto:aljamiatulbukhari@gmail.com"
+              >
+                <span className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[18px] text-[#785610]">
+                    mail
+                  </span>
+                  <span>Official Email</span>
+                </span>
+                <span className="text-[#8c6828] group-hover:translate-x-0.5 transition-transform">
+                  aljamiatulbukhari@gmail.com
                 </span>
               </a>
               <a
@@ -188,20 +234,6 @@ export default function Footer() {
                 </span>
                 <span className="text-[#8c6828] group-hover:translate-x-0.5 transition-transform">
                   Lectures &amp; Bayans
-                </span>
-              </a>
-              <a
-                className="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-[#ffffff] border border-[#d9cdb8] text-[#1f1b15] hover:border-[#b48a3c] hover:bg-[#f5eedb] transition-all group shadow-xs"
-                href="#whatsapp"
-              >
-                <span className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[18px] text-[#785610]">
-                    forum
-                  </span>
-                  <span>WhatsApp Channel</span>
-                </span>
-                <span className="text-[#8c6828] group-hover:translate-x-0.5 transition-transform">
-                  Instant Notices
                 </span>
               </a>
             </div>
